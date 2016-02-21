@@ -1,0 +1,51 @@
+<head>
+  <title>CryptMe</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+</head>
+
+<body class="container">
+  <h1 style="text-align: center">
+    <i class="large material-icons prefix">phonelink_lock</i>
+    CryptMe
+  </h1>
+  {{> encryption_form}}
+</body>
+
+<template name="encryption_form">
+  <div class="row">
+    <form class="col s6" id="form">
+      <div class="row">
+        <div class="input-field">
+          <input id="sender" type="text" class="validate">
+          <label class="active" for="sender">Sender</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="recipient" type="text" class="validate">
+          <label class="active" for="recipient">Recipient</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <input id="email" type="email" class="validate">
+          <label class="active" for="email">Recipient Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <textarea id="message" class="materialize-textarea validate"></textarea>
+          <label class="active" for="message">Message</label>
+        </div>
+      </div>
+      <button class="btn" id="encrypt">Encrypt</button>
+      <button class="btn" id="send">Send Message</button>
+    </form>
+    <div class="col s5 offset-s1">
+      <p>{{encrypted_message}}</p>
+    </div>
+  </div>
+</template>
